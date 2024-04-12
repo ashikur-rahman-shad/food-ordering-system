@@ -11,7 +11,7 @@
 <body style="background-image: url('img/bg.png');">
 
     <header flex>
-        <h1 inline>Order Food</h1>
+        <h1 inline onclick="goTo('index.html')">Order Food</h1>
 
         <input type="text" placeholder="search">
 
@@ -22,15 +22,24 @@
 
     </header>
 
-    <main flex paddings>
+    <main paddings flex>
 
         <div>
-            <h2 id="food_name">...</h2>
-            <img id="food_img" medium>
+            <img id="food_img" style="max-width: 500px; max-height: 400px; width: 100%;">
         </div>
 
-        <div>
+        <div paddings>
+            <h2 inline-block id="food_name">...</h2>
+            <div inline-block>
+                <i>by <span id="restaurant_name"></span></i>
+            </div>
+            <br>
             <b>Price:</b> <span id="food_price"></span>
+            <div padding inline-block>
+                <b>Quantity</b>
+                <input type="number" value="1" min="1" max="20" style="width: 50px !important;">
+                <button value="quantity">Order</button>
+            </div>
             <p id="description"></p>
         </div>
         
