@@ -173,6 +173,7 @@ CREATE TABLE orders (
     customer_id INT NOT NULL,
     restaurant_id INT NOT NULL,
     food_id INT NOT NULL,
+    food_name VARCHAR(100) NOT NULL,
     quantity INT NOT NULL,
     rate INT NOT NULL,
     address VARCHAR(255) NOT NULL,

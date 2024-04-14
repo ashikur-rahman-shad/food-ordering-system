@@ -41,7 +41,8 @@ class kawaii_db
     return $result;
   }
 
-  function sql_fetch($query){
+  function sql_fetch($query)
+  {
     return mysqli_fetch_all($this->sql($query), MYSQLI_ASSOC);
   }
 
@@ -88,6 +89,20 @@ function post($elements)
   return $array;
 }
 
+function postJSON($elements)
+{
+  $jsonData = file_get_contents('php://input');
+  $formData = json_decode($jsonData, true);
+  $array = [];
+  foreach ($elements as $element) {
+    if (isset($formData[$element]))
+      $array[$element] = $formData[$element];
+    else
+      die($element . " is missing");
+  }
+  return $array;
+}
+
 function get($elements)
 {
   $array = [];
@@ -111,7 +126,8 @@ function sql($query)
   return $result;
 }
 
-function sql_fetch($query){
+function sql_fetch($query)
+{
   return mysqli_fetch_all(sql($query), MYSQLI_ASSOC);
 }
 

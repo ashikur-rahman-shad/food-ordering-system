@@ -36,7 +36,7 @@ header,
 footer,
 main {
     background-color: var(--semi-transparent);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
 }
 
 header,

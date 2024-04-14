@@ -3,6 +3,7 @@
 <head>
     <title>Food  Ordering  system</title>
     <script src="./script/kawai2.js" defer></script>
+    <script src="./script/login-check.js" defer></script>
     <script src="./script/food-info.js" defer></script>
     <link rel="stylesheet" href="./styles/kawaii.css">
 </head>
@@ -17,7 +18,7 @@
 
         <div flex paddings>
             <a>Restaurant<br>Zone</a>
-            <a>Customer<br>Zone</a>
+            <a href="./customer/">Customer<br>Zone</a>
         </div>
 
     </header>
@@ -25,7 +26,7 @@
     <main paddings flex>
 
         <div>
-            <img id="food_img" style="max-width: 500px; max-height: 400px; width: 100%;">
+            <img id="food_img" type="preview">
         </div>
 
         <div paddings>
@@ -37,8 +38,8 @@
             <b>Price:</b> <span id="food_price"></span>
             <div padding inline-block>
                 <b>Quantity</b>
-                <input type="number" value="1" min="1" max="20" style="width: 50px !important;">
-                <button value="quantity">Order</button>
+                <input id="quantity" type="number" value="1" min="1" max="20" style="width: 50px !important;">
+                <button onclick="orderFood()">Order</button>
             </div>
             <p id="description"></p>
         </div>

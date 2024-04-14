@@ -2,7 +2,7 @@
 
 require_once "db1.php";
 
-$user = post(["email", "password", "name", "date_of_birth", "address", "phone"]);
+$user = postJSON(["email", "password", "name", "date_of_birth", "address", "phone"]);
 
 $email = $user['email'];
 $password = $user['password'];
@@ -23,8 +23,14 @@ if ($result) {
         ('$email', '$password', '$name', '$date_of_birth', '$address', '$phone');"
     );
 
-    if ($result)
-        echo "Registration Success";
-    else
-        echo "Registration Failed. Try again letter";
+    if ($result) {
+        echo json_encode(['state' => '1']);
+        $_SESSION["customer_id"] = $result["id"];
+        $_SESSION["name"] = $result["name"];
+    } else {
+        echo json_encode(['state' => '0']);
+        session_destroy();
+    }
 }
+
+header('Content-Type: application/json');
