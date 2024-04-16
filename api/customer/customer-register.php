@@ -14,7 +14,8 @@ $phone = $user['phone'];
 $result = sql_fetch_row("SELECT * FROM customers WHERE email='$email';");
 
 if ($result) {
-    echo $result["email"] . " is already registered";
+    echo json_encode(['state' => '2']);
+    session_destroy();
 } else {
     $result = sql(
         "INSERT INTO customers
@@ -25,8 +26,6 @@ if ($result) {
 
     if ($result) {
         echo json_encode(['state' => '1']);
-        $_SESSION["customer_id"] = $result["id"];
-        $_SESSION["name"] = $result["name"];
     } else {
         echo json_encode(['state' => '0']);
         session_destroy();

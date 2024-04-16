@@ -18,18 +18,20 @@ async function orderFood() {
     login_state = await customer_login_check();
     if (login_state == false)
         await goTo('./customer/login.html');
+    else {
+        quantity = $("#quantity").value;
+        address = prompt("Enter your address: ");
+        phone = prompt("Enter your phone number: ");
 
-    quantity = $("#quantity").value;
-    address = prompt("Enter your address: ");
-    phone = prompt("Enter your phone number: ");
-    
-    if ((address) && (phone)) {
-        data = { 'food_id': food_id, 'quantity': quantity, 'address': address, 'phone': phone };
-        alert(await post("http://localhost/food-ordering-system-backend/api/customer/order-food.php", data));
-        await goTo('./index.html');
+        if ((address) && (phone)) {
+            data = { 'food_id': food_id, 'quantity': quantity, 'address': address, 'phone': phone };
+            alert(await post("http://localhost/food-ordering-system-backend/api/customer/order-food.php", data));
+            await goTo('./index.html');
+        }
+        else
+            alert("Address and phone number is required!");
+
     }
-    else
-        alert("Address and phone number is required!");
 }
 
 food_info();

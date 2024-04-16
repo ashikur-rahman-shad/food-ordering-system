@@ -8,13 +8,11 @@ async function showLatestFood() {
             '<a flat href="food.html?id=' + food['id'] + '">'
             + "<h3>" + food['name'] + "</h3>"
             + '<img type="thumbnail" src=" ' + food['photo_link'] + '">  <br>'
-            + "Price: " + food['price']
+            + "Price: TK " + food['price']
             + "<br><br> </a>"
             ;
     });
 }
 
-showLatestFood();
-showLatestFood();
 showLatestFood();
 

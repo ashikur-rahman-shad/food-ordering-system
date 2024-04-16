@@ -2,7 +2,7 @@
 
 require_once "db1.php";
 
-$user = post(["email", "password", "name", "address"]);
+$user = postJSON(["email", "password", "name", "address"]);
 
 $email = $user['email'];
 $password = $user['password'];
@@ -12,7 +12,8 @@ $address = $user['address'];
 $result = sql_fetch_row("SELECT * FROM restaurants WHERE email='$email';");
 
 if ($result) {
-    echo $result["email"] . " is already registered";
+    echo json_encode(['state' => '2']);
+    session_destroy();
 } else {
     $result = sql("INSERT INTO restaurants
         (`email`, `password`, `name`, `address`)
@@ -20,8 +21,12 @@ if ($result) {
         ('$email', '$password', '$name', '$address');"
     );
 
-    if ($result)
-        echo "Registration Success";
-    else
-        echo "Registration Failed. Try again letter";
+    if ($result) {
+        echo json_encode(['state' => '1']);
+    } else {
+        echo json_encode(['state' => '0']);
+        session_destroy();
+    }
 }
+
+header('Content-Type: application/json');

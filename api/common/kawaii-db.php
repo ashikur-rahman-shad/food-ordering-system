@@ -95,9 +95,9 @@ function postJSON($elements)
   $formData = json_decode($jsonData, true);
   $array = [];
   foreach ($elements as $element) {
-    if (isset($formData[$element]))
+    if (isset($formData[$element])) {
       $array[$element] = $formData[$element];
-    else
+    } else
       die($element . " is missing");
   }
   return $array;
@@ -107,7 +107,7 @@ function get($elements)
 {
   $array = [];
   foreach ($elements as $element) {
-    if (isset($_GET[$element]))
+    if (!empty($_GET[$element]))
       $array[$element] = $_GET[$element];
     else
       die($element . " is missing");

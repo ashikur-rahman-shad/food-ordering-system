@@ -89,16 +89,16 @@ function post($elements)
   return $array;
 }
 
-function postJSON($elements)
+function postJSON($elements, $error_state = 3)
 {
   $jsonData = file_get_contents('php://input');
   $formData = json_decode($jsonData, true);
   $array = [];
   foreach ($elements as $element) {
-    if (isset($formData[$element]))
+    if (!empty($formData[$element])) {
       $array[$element] = $formData[$element];
-    else
-      die($element . " is missing");
+    } else
+      die('{"state": "' . $error_state . '", "missing" :"' . $element . '"}');
   }
   return $array;
 }
@@ -107,7 +107,7 @@ function get($elements)
 {
   $array = [];
   foreach ($elements as $element) {
-    if (isset($_GET[$element]))
+    if (!empty($_GET[$element]))
       $array[$element] = $_GET[$element];
     else
       die($element . " is missing");

@@ -2,7 +2,7 @@
 
 require_once "db1.php";
 
-$user = post(["email", "password"]);
+$user = postJSON(["email", "password"]);
 
 $email = $user['email'];
 $password = $user['password'];
@@ -13,11 +13,12 @@ $result =
 
 
 if ($result) {
-    echo $result["name"] . " is logged in";
+    echo json_encode(['state' => '1']);
     $_SESSION["restaurants_id"] = $result["id"];
     $_SESSION["name"] = $result["name"];
 } else {
 
-    echo "Incorrect ID/Pass";
+    echo json_encode(['state' => '0']);
     session_destroy();
 }
+header('Content-Type: application/json');

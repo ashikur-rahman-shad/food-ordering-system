@@ -1,10 +1,10 @@
 <?php
 require_once './db1.php';
-
 require_once './access.php';
+header('Content-Type: application/json');
 
 $restaurant_id = $_SESSION["restaurants_id"];
-$input = post(['name', 'price', 'description', 'photo_link']);
+$input = postJSON(['name', 'price', 'description', 'photo_link']);
 
 $name = $input["name"];
 $price = $input["price"];
@@ -17,6 +17,6 @@ if (sql(
     VALUES
     ('$restaurant_id' ,'$name', '$price', '$description', '$photo_link');"
 ))
-    echo "Food added";
+    echo '{"state": "1"}';
 else
-    echo "Something went wrong. Try again later";
+    echo '{"state": "2"}';
