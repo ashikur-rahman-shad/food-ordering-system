@@ -10,6 +10,7 @@ async function food_info() {
     output("restaurant_name", restaurant['name']);
     output("description", food['description']);
     $("#food_img").src = food['photo_link'];
+    $("#restaurant_name").href = "./restaurant.html?id="+restaurant['id'];
 }
 
 async function orderFood() {

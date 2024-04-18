@@ -109,7 +109,7 @@ CREATE TABLE foods (
     restaurant_id int NOT NULL,
     name VARCHAR(100) NOT NULL,
     price INT NOT NULL,
-    description TEXT(1000),
+    description TEXT(1000) NOT NULL,
     photo_link VARCHAR(200) NOT NULL);
 
 ```

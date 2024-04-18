@@ -10,10 +10,10 @@ button, textarea,select {
     margin: 10px;
 }
 
-button {
+/* button {
     padding: 5px 10px;
 
-}
+} */
 
 input, textarea, select{
     width: calc(100% - 20px);
@@ -23,4 +23,12 @@ input, textarea, select{
 
 textarea{
     align-content: start;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+form{
+    margin: 0;
 }

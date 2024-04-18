@@ -14,7 +14,13 @@
     <header flex>
         <h1 inline onclick="goTo('index.html')">Order Food</h1>
 
-        <input type="text" placeholder="search">
+        <form action="./search.html" method="get" shade1 no-decors round-edge>
+            <input name="q" type="text" placeholder="search" inline center>
+            <div>
+                <button type="submit" name="food">Food</button>|
+                <button type="submit" name="restaurant">Restaurants</button>
+            </div>
+        </form>
 
         <div flex paddings>
             <a href="./restaurant/">Restaurant<br>Zone</a>
@@ -32,7 +38,7 @@
         <div paddings>
             <h2 inline-block id="food_name">...</h2>
             <div inline-block>
-                <i>by <span id="restaurant_name"></span></i>
+                <i>by <a href="" id="restaurant_name"></a></i>
             </div>
             <br>
             <b>Price:</b> <span id="food_price"></span>

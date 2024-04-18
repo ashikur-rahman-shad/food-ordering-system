@@ -10,7 +10,13 @@
 <body style="background-image: url('../img/bg.png');">
     <header flex>
         <h1 onclick="goTo('../index.html')">Order Food</h1>
-        <input type="text" placeholder="search">     
+        <form action="../search.html" method="get" shade1 no-decors round-edge>
+            <input name="q" type="text" placeholder="search" inline center>
+            <div>
+                <button type="submit" name="food">Food</button>|
+                <button type="submit" name="restaurant">Restaurants</button>
+            </div>
+        </form>    
         <div flex paddings>
             <a href="../restaurant/index.html">Restaurant Zone</a>
         </div>

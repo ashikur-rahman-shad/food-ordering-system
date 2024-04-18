@@ -1,10 +1,10 @@
 <html>
 
 <head>
-    <title>Food  Ordering  system</title>
+    <title>Food Ordering system</title>
     <script src="./script/kawai2.js" defer></script>
     <script src="./script/food-list.js" defer></script>
-    <script src="./script/food-latest.js" defer></script>
+    <script src="./script/search.js" defer></script>
     <link rel="stylesheet" href="./styles/kawaii.css">
 </head>
 
@@ -15,7 +15,7 @@
     <header flex>
         <h1 inline onclick="goTo('index.html')">Order Food</h1>
 
-        <form action="./search.html" method="get" shade1 no-decors round-edge>
+        <form action="" method="get" shade1 no-decors round-edge>
             <input name="q" type="text" placeholder="search" inline center>
             <div>
                 <button type="submit" name="food">Food</button>
@@ -23,6 +23,8 @@
                 <button type="submit" name="restaurant">Restaurants</button>
             </div>
         </form>
+
+
 
         <div flex paddings>
             <a href="./restaurant/">Restaurant<br>Zone</a>
@@ -33,12 +35,13 @@
 
 
     <main>
-        <h2>Latest Food items!</h2>
-        <div padding flex id="latest-food"></div>
+        <span id="title"></span>
+        <div id="results" flex padding>Feel free to search :D</div>
     </main>
 
 
     <footer>Dveloped By Nahiyan</footer>
-    
+
 </body>
+
 </html>
