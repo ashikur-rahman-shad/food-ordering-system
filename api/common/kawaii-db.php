@@ -4,7 +4,7 @@
 const db_host = "localhost";
 const db_user = "root";
 const db_pass = "";
-const database = "Food Ordering system";
+const database = "food-ordering-system";
 
 date_default_timezone_set('Asia/Dhaka');
 
