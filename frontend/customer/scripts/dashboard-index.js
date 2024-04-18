@@ -32,6 +32,8 @@ async function listOrders() {
             "<td>BDT " + order['rate'] + "</td>" +
             "<td>" + order['quantity'] + "</td>" +
             "<td>TK " + (order['rate'] * order['quantity']) + "</td>" +
+            "<td>" + order['address'] + "</td>" +
+            "<td>" + order['phone'] + "</td>" +
             "<td>" + state_of_order(order['order_state']) + "</td>" +
             "</tr>";
     });
