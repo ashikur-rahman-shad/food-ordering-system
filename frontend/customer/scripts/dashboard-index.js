@@ -1,5 +1,5 @@
 async function logout() {
-    await fetch("http://localhost/food-ordering-system-backend/api/common/logout.php");
+    await fetch("../../api/common/logout.php");
     goTo("../");
 }
 
@@ -23,7 +23,7 @@ async function listOrders() {
     let container, myOrders;
     container = document.getElementById('myOrders');
     console.log(container);
-    myOrders = await fetchJSON("http://localhost/food-ordering-system-backend/api/customer/view-orders.php");
+    myOrders = await fetchJSON("../../api/customer/view-orders.php");
     myOrders.forEach((order, index) => {
         container.innerHTML +=
             "<tr>" +
