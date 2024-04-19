@@ -1,5 +1,9 @@
 # Databases
 
+```SQL
+CREATE database `food-ordering-system` ;
+```
+
 ## Customer
 
 ### customers Table Creation - tested

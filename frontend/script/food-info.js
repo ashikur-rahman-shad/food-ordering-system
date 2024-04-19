@@ -2,8 +2,8 @@ var food_id, food, restaurant;
 
 async function food_info() {
     food_id = GET()['id'];
-    food = await fetchJSON("http://localhost/food-ordering-system-backend/api/common/view-food.php?food_id=" + food_id);
-    restaurant = await fetchJSON("http://localhost/food-ordering-system-backend/api/common/restaurant-profile.php?restaurant_id=" + food['restaurant_id'])
+    food = await fetchJSON("../api/common/view-food.php?food_id=" + food_id);
+    restaurant = await fetchJSON("../api/common/restaurant-profile.php?restaurant_id=" + food['restaurant_id'])
 
     output("food_name", food['name']);
     output("food_price", food['price']);
@@ -26,7 +26,7 @@ async function orderFood() {
 
         if ((address) && (phone)) {
             data = { 'food_id': food_id, 'quantity': quantity, 'address': address, 'phone': phone };
-            alert(await post("http://localhost/food-ordering-system-backend/api/customer/order-food.php", data));
+            alert(await post("../api/customer/order-food.php", data));
             await goTo('./index.html');
         }
         else

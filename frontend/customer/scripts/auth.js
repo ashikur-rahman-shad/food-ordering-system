@@ -3,7 +3,7 @@ async function login() {
     let data = getInputs("login-form");
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/customer/customer-login.php",
+        "../../api/customer/customer-login.php",
         data);
 
     if (result['state'] === '1') {
@@ -15,12 +15,14 @@ async function login() {
     else
         output('message', '<h3>Something went wrong :(</h3>');
 }
+
+
 async function register() {
 
     let data = getInputs("registration-form");
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/customer/customer-register.php",
+        "../../api/customer/customer-register.php",
         data);
 
     console.log(result);

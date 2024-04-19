@@ -5,7 +5,7 @@ async function addFood() {
     console.log(data);
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/restaurants/add-food.php",
+        "../../api/restaurants/add-food.php",
         data);
 
     console.log(result);

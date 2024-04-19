@@ -1,5 +1,5 @@
 async function logout() {
-    await fetch("http://localhost/food-ordering-system-backend/api/common/logout.php");
+    await fetch("../../api/common/logout.php");
     goTo("../");
 }
 
@@ -34,7 +34,7 @@ async function updateStatus(order_id) {
     let data = { "order_id": order_id, "state": state };
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/restaurants/update-order.php",
+        "../../api/restaurants/update-order.php",
         data);
 
     alert(result);
@@ -44,7 +44,7 @@ async function listOrders() {
     let container, myOrders;
     container = $('#myOrders');
     console.log(container);
-    myOrders = await fetchJSON("http://localhost/food-ordering-system-backend/api/restaurants/view-orders.php");
+    myOrders = await fetchJSON("../../api/restaurants/view-orders.php");
     myOrders.forEach((order, index) => {
         container.innerHTML += `<tr>
         <td>${index + 1}</td>

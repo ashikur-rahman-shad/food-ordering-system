@@ -3,7 +3,7 @@ async function login() {
     let data = getInputs("login-form");
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/restaurants/restaurant-login.php",
+        "../../api/restaurants/restaurant-login.php",
         data);
 
     if (result['state'] === '1') {
@@ -20,7 +20,7 @@ async function register() {
     let data = getInputs("registration-form");
 
     let result = await post(
-        "http://localhost/food-ordering-system-backend/api/restaurants/restaurant-register.php",
+        "../../api/restaurants/restaurant-register.php",
         data);
 
     if (typeof(result)!="object")

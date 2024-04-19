@@ -20,11 +20,11 @@ function search() {
     let parameter = GET();
     if (parameter['q'] && parameter['restaurant'] !== undefined) {
         $('#title').innerHTML = `<h3 no-margin>Restaurants like ${parameter['q'].replace(/\+/g, ' ')} </h3>`;
-        showRestaurants("#results", "http://localhost/food-ordering-system-backend/api/common/restaurant-search.php?restaurant_name=" + parameter['q']);
+        showRestaurants("#results", "../api/common/restaurant-search.php?restaurant_name=" + parameter['q']);
     }
     else if (parameter['q'] && parameter['food'] !== undefined) {
         $('#title').innerHTML = `<h3 no-margin>Foods like ${parameter['q'].replace(/\+/g, ' ')} </h3>`;
-        showFoods("#results", "http://localhost/food-ordering-system-backend/api/common/food-search.php?query=" + parameter['q']);
+        showFoods("#results", "../api/common/food-search.php?query=" + parameter['q']);
     }
 }
 

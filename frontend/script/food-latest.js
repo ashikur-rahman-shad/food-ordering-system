@@ -1,1 +1,1 @@
-showFoods("#latest-food", "http://localhost/food-ordering-system-backend/api/common/latest-food.php")
+showFoods("#latest-food", "../api/common/latest-food.php")
