@@ -4,7 +4,7 @@ async function showRestaurants(output_container, link) {
 
     restaurants.forEach(restaurant => {
         output += `
-        <div inline-block flex>
+        <div flex>
         <a href="restaurant.html?id=${restaurant['id']}">
             <h4> ${restaurant['name']} </h4>
         </a>
