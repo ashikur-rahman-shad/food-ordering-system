@@ -1,4 +1,4 @@
-# Online Food Ordering System (For a friend)
+# Online Food Ordering System (Team work)
 
 #### A project showcasing my
 
