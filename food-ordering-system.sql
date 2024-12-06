@@ -42,7 +42,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `email`, `password`, `name`, `date_of_birth`, `phone`, `address`) VALUES
-(1, 'shadgood@gmail.com', 'wowowow', 'Ashikur Rahman Shad', '2024-04-09', '01911108270', '5/B, Shimul, Ramna');
+(1, 'oithi@gmail.com', '12345678', 'Mahmuda Oithi', '2024-04-09', '01927777038', 'Mirpur');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE `restaurants` (
 --
 
 INSERT INTO `restaurants` (`id`, `email`, `password`, `name`, `address`, `description`) VALUES
-(1, 'shadgood@gmail.com', 'wowowow', 'Food Court', 'DIU, Dhaka', NULL);
+(1, 'food-court-diu@gmail.com', '12345678', 'Food Court', 'DIU, Dhaka', NULL);
 
 --
 -- Indexes for dumped tables
